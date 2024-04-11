@@ -1,0 +1,43 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Products",
+    "dateExported": "2024-04-11T00:55:23.694Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "23510f96-3621-4b4b-9c71-ea708a324a5f",
+            "colId": "0e313e95-dbd4-4740-9b09-16973f9f5e42",
+            "containerId": "",
+            "name": "GET products",
+            "url": "localhost:1337/api/products?populate=*",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-11T00:44:43.886Z",
+            "modified": "2024-04-11T00:47:28.749Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "populate",
+                    "value": "*",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "f4e8d528-3ce7-4c15-ba3c-68f01475c56f",
+            "colId": "0e313e95-dbd4-4740-9b09-16973f9f5e42",
+            "containerId": "",
+            "name": "GET images",
+            "url": "localhost:1337/uploads/small_arroz_bb4ef45b75.jpg",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-11T00:49:36.022Z",
+            "modified": "2024-04-11T00:55:08.279Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

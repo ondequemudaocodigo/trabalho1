@@ -1,0 +1,56 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Categories",
+    "dateExported": "2024-04-11T00:53:41.525Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0896c35d-995f-4a06-9d88-cb50dd56e3a8",
+            "colId": "3ac66d77-b140-4ac1-8546-75270d4bab5a",
+            "containerId": "",
+            "name": "GET categories",
+            "url": "localhost:1337/api/categories",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-11T00:33:45.702Z",
+            "modified": "2024-04-11T00:35:32.487Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1805a2a3-44cf-4c42-96d3-456d544a2432",
+            "colId": "3ac66d77-b140-4ac1-8546-75270d4bab5a",
+            "containerId": "",
+            "name": "GET BY ID categories",
+            "url": "localhost:1337/api/categories/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-11T00:38:46.094Z",
+            "modified": "2024-04-11T00:39:10.333Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "48c6529f-b980-4664-a0b1-ca6e0d89b1da",
+            "colId": "3ac66d77-b140-4ac1-8546-75270d4bab5a",
+            "containerId": "",
+            "name": "POST categories",
+            "url": "localhost:1337/api/categories",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-11T00:39:56.854Z",
+            "modified": "2024-04-11T00:41:55.780Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"data\":{\n    \"name\": \"higiene\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
