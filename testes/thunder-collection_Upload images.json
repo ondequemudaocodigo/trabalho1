@@ -1,0 +1,21 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Upload images",
+    "dateExported": "2024-04-18T00:49:23.400Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "10f1a923-43e7-4ce2-9774-655706fb4298",
+            "colId": "ecbea920-f265-4646-a374-d3a3297bd9aa",
+            "containerId": "",
+            "name": "POST upload",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-17T23:20:47.017Z",
+            "modified": "2024-04-17T23:25:21.211Z",
+            "headers": []
+        }
+    ]
+}
