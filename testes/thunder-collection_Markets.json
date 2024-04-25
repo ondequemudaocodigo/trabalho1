@@ -1,0 +1,44 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Markets",
+    "dateExported": "2024-04-25T00:41:18.445Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ec35433a-a85b-41d9-bd8c-370d5d42f858",
+            "colId": "23d7cbbc-dbfc-407b-8118-9b91aeb60228",
+            "containerId": "",
+            "name": "GET product by price",
+            "url": "localhost:1337/api/markets/2?populate[0]=prices&populate[1]=prices.products",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-25T00:24:03.237Z",
+            "modified": "2024-04-25T00:38:26.616Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "sort",
+                    "value": "\"Arroz\"",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "populate[0]",
+                    "value": "prices",
+                    "isPath": false
+                },
+                {
+                    "name": "populate[1]",
+                    "value": "prices.products",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token_adm}}"
+            },
+            "tests": []
+        }
+    ]
+}

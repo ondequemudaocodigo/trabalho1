@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Products",
-    "dateExported": "2024-04-18T00:49:15.816Z",
+    "dateExported": "2024-04-24T23:51:56.826Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,35 @@
             "colId": "0e313e95-dbd4-4740-9b09-16973f9f5e42",
             "containerId": "",
             "name": "GET products",
-            "url": "localhost:1337/api/products?populate=*",
+            "url": "localhost:1337/api/products?populate=deep,2",
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-04-11T00:44:43.886Z",
-            "modified": "2024-04-11T00:47:28.749Z",
+            "modified": "2024-04-24T23:11:23.396Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "populate",
+                    "value": "deep,2",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token_adm}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "aa215be0-c938-4f29-90b5-883c265c6c95",
+            "colId": "0e313e95-dbd4-4740-9b09-16973f9f5e42",
+            "containerId": "",
+            "name": "GET BY ID products",
+            "url": "localhost:1337/api/products/12?populate=*",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-24T23:03:50.594Z",
+            "modified": "2024-04-24T23:11:52.141Z",
             "headers": [],
             "params": [
                 {
@@ -23,6 +47,10 @@
                     "isPath": false
                 }
             ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token_adm}}"
+            },
             "tests": []
         },
         {
@@ -37,6 +65,24 @@
             "modified": "2024-04-11T00:55:08.279Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "08e72bbf-285c-455e-9bae-b3fe7faa049b",
+            "colId": "0e313e95-dbd4-4740-9b09-16973f9f5e42",
+            "containerId": "",
+            "name": "DELETE products",
+            "url": "localhost:1337/api/products/13",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-24T22:23:23.802Z",
+            "modified": "2024-04-24T22:25:26.748Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token_adm}}"
+            },
             "tests": []
         }
     ]

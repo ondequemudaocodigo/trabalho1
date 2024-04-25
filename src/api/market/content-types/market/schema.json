@@ -4,7 +4,8 @@
   "info": {
     "singularName": "market",
     "pluralName": "markets",
-    "displayName": "Market"
+    "displayName": "Market",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,11 +17,11 @@
       "required": true,
       "unique": true
     },
-    "products": {
+    "prices": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::product.product",
-      "inversedBy": "markets"
+      "target": "api::price.price",
+      "mappedBy": "markets"
     }
   }
 }

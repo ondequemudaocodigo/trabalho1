@@ -17,28 +17,30 @@
       "required": true,
       "unique": false
     },
-    "price": {
-      "type": "decimal",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
-    },
-    "markets": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::market.market",
-      "mappedBy": "products"
     },
     "brand": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::brand.brand",
+      "inversedBy": "products"
+    },
+    "prices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::price.price",
+      "inversedBy": "products"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type.type",
       "inversedBy": "products"
     }
   }

@@ -830,16 +830,17 @@ export interface ApiMarketMarket extends Schema.CollectionType {
     singularName: 'market';
     pluralName: 'markets';
     displayName: 'Market';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    products: Attribute.Relation<
+    prices: Attribute.Relation<
       'api::market.market',
       'manyToMany',
-      'api::product.product'
+      'api::price.price'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -852,6 +853,47 @@ export interface ApiMarketMarket extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::market.market',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPricePrice extends Schema.CollectionType {
+  collectionName: 'prices';
+  info: {
+    singularName: 'price';
+    pluralName: 'prices';
+    displayName: 'Price';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    price: Attribute.Float & Attribute.Required;
+    markets: Attribute.Relation<
+      'api::price.price',
+      'manyToMany',
+      'api::market.market'
+    >;
+    products: Attribute.Relation<
+      'api::price.price',
+      'manyToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::price.price',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::price.price',
       'oneToOne',
       'admin::user'
     > &
@@ -872,17 +914,21 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    price: Attribute.Decimal & Attribute.Required;
-    image: Attribute.Media & Attribute.Required;
-    markets: Attribute.Relation<
-      'api::product.product',
-      'manyToMany',
-      'api::market.market'
-    >;
+    image: Attribute.Media;
     brand: Attribute.Relation<
       'api::product.product',
       'manyToOne',
       'api::brand.brand'
+    >;
+    prices: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::price.price'
+    >;
+    type: Attribute.Relation<
+      'api::product.product',
+      'manyToOne',
+      'api::type.type'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -898,6 +944,33 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTypeType extends Schema.CollectionType {
+  collectionName: 'types';
+  info: {
+    singularName: 'type';
+    pluralName: 'types';
+    displayName: 'Type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    products: Attribute.Relation<
+      'api::type.type',
+      'oneToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -922,7 +995,9 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::brand.brand': ApiBrandBrand;
       'api::market.market': ApiMarketMarket;
+      'api::price.price': ApiPricePrice;
       'api::product.product': ApiProductProduct;
+      'api::type.type': ApiTypeType;
     }
   }
 }
